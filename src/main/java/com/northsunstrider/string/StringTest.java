@@ -1,4 +1,4 @@
-package com.northsunstrider.String;
+package com.northsunstrider.string;
 
 /**
  * @Description: TODO
