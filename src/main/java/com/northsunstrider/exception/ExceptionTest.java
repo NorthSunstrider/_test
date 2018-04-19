@@ -5,7 +5,7 @@ package com.northsunstrider.exception;
 
 import java.util.Random;
 
-import com.northsunstrider.template.TestEntity;
+import com.northsunstrider.eclipse.codetemplate.TestEntity;
 
 /** 
  * @author North 

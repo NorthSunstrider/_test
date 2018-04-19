@@ -1,14 +1,14 @@
 package com.northsunstrider.collection;
 
 /**
- * @Description: TODO
+ * @Description: 手动实现单向链表反转
  * @author: North
  * @date: 2018年4月16日 下午3:19:15
  */
 public class NodeTest {
 
 	/**
-	 * @Description TODO
+	 * @Description main
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -19,12 +19,17 @@ public class NodeTest {
 		Node node3 = new Node("3", null);
 		node2.setNext(node3);
 
-		head = aaaa(head);
+		head = reverse(head);
 
 		System.out.println((String) head.getObject());
 
 	}
 
+	/**
+	 * @Description 反转的循环实现
+	 * @param head
+	 * @return
+	 */
 	public static Node reverse(Node head) {
 		if (head == null)
 			return head;
@@ -45,6 +50,11 @@ public class NodeTest {
 
 	}
 
+	/**
+	 * @Description 反转的递归实现
+	 * @param node
+	 * @return
+	 */
 	public static Node reverse2(Node node) {
 
 		if (node == null || node.getNext() == null) {
@@ -56,22 +66,11 @@ public class NodeTest {
 		return temp;
 	}
 
-	public static Node aaaa(Node node) {
-		if (node.getNext() == null)
-			return node;
-
-		Node reHead = aaaa(node.getNext());
-		node.getNext().setNext(node);
-		node.setNext(null);
-		return reHead;
-
-	}
-
 }
 
 class Node {
-	Object object;
-	Node next;
+	private Object object;
+	private Node next;
 
 	public Node(Object object, Node next) {
 		super();

@@ -1,6 +1,7 @@
 package com.northsunstrider.radixparser;
 
 /** 
+ * @Description 进制转换工具
  * @author North 
  * @date 2016年2月1日 上午11:35:53 
  * @version V1.0

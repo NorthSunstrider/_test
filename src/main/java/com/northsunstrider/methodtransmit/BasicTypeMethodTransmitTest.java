@@ -4,7 +4,7 @@ package com.northsunstrider.methodtransmit;
 public class BasicTypeMethodTransmitTest {
 
 	public static void main(String[] args) {
-		byteTransmitTest();
+		intTransmitTest();
 	}
 
 	public static void intTransmit(int value){

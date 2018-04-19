@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.northsunstrider.template;
+package com.northsunstrider.eclipse.codetemplate;
 
 /**
  * @author North
