@@ -4,13 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * @Description: 模拟猫德的输出循环
+ * @author: North
+ * @date: 2018年4月19日 下午4:11:14
+ */
 public class DruidTest {
 	public static void main(String[] args) {
 		damageCycle();
 	}
 
 	public static void damageCycle() {
-		List skillList = new ArrayList<>();
+		List<Character> skillList = new ArrayList<Character>();
 		int count = 0;
 		int timer = 0;
 

@@ -1,9 +1,13 @@
 package com.northsunstrider.clz;
 
+import com.northsunstrider.clz1.Bat;
+
 public class ClzTest {
 
 	public static void main(String[] args) {
-		extendTest();
+		 extendTest();
+		// method1();
+//		method2();
 	}
 
 	public static void method1() {
@@ -22,7 +26,7 @@ public class ClzTest {
 		a1.wear();
 		A2 a2 = new A2();
 		String s = a2.name;
-
+		System.out.println(s);
 	}
 
 	public static void method3() {
@@ -30,8 +34,7 @@ public class ClzTest {
 	}
 
 	/*
-	 * 测试继承关系中，new一个对象时，java的执行逻辑 
-	 * 结论：先生成父类再生成子类
+	 * 测试继承关系中，new一个对象时，java的执行逻辑 结论：先生成父类再生成子类
 	 */
 	public static void extendTest() {
 		Father f = new Child();

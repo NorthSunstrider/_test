@@ -37,4 +37,18 @@ public class StringTest {
 		System.out.println(s + sb);
 	}
 
+	/**
+	 * @Description 测试Java中的三个String对象
+	 */
+	public static void threeStringObjectTest() {
+		String str = new String("aaa");
+		StringBuffer sb = new StringBuffer("sbsb");
+		StringBuilder stringBuilder = new StringBuilder("builder");
+
+		char a = 'a';
+		// 报错
+		// char b="a";
+		char c='他';
+	}
+
 }

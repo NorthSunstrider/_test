@@ -19,7 +19,8 @@ public class Test {
 		// for (int i : numbers)
 		// System.out.print(i + "\t");
 		// sortArrayAsRandom();
-		classTest();
+		// classTest();
+		hash1();
 	}
 
 	public static int[] RandonArray(int size, int range) {
@@ -190,4 +191,16 @@ public class Test {
 		Class c2 = c1.getSuperclass();
 
 	}
+
+	// 测试java中的hash code方法
+	public static void hash1() {
+		int a = 0;
+		String str = "aaa";
+		System.out.println(str.hashCode());
+		String s = "bbb";
+		System.out.println(s.hashCode());
+		System.out.println(new Object().hashCode());
+
+	}
+
 }

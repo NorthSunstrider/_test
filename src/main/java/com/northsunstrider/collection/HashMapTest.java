@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.northsunstrider.clz.Airplane;
-import com.northsunstrider.clz.Bat;
 import com.northsunstrider.clz.Fly;
+import com.northsunstrider.clz1.Bat;
 
 public class HashMapTest {
 
