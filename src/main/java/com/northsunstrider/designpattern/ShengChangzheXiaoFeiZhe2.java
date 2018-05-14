@@ -3,7 +3,7 @@ package com.northsunstrider.designpattern;
 import java.util.Vector;
 
 /**
- * @Description: 生产者消费者模型的改进版本
+ * @Description: 生产者消费者模型、
  * @author: North
  * @date: 2018年4月23日 下午12:50:43
  */
