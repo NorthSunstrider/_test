@@ -1,10 +1,16 @@
 package com.northsunstrider.test;
 
 import java.awt.Button;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+
+import javax.imageio.ImageIO;
 
 import com.northsunstrider.clz.Constructor;
 
@@ -20,7 +26,8 @@ public class Test {
 		// System.out.print(i + "\t");
 		// sortArrayAsRandom();
 		// classTest();
-		hash1();
+//		hash1();
+		reduce("C:\\Matrix\\", "Snipaste_2021-01-08_23-02-03.png", 100,100, false);
 	}
 
 	public static int[] RandonArray(int size, int range) {
@@ -203,4 +210,37 @@ public class Test {
 
 	}
 
+	public static String reduce(String base, String imgPath, int width, int height, boolean percentage) {
+		try {
+			File srcfile = new File(base + imgPath);
+			BufferedImage src = ImageIO.read(srcfile);
+			if (percentage) {
+				double rate1 = ((double) src.getWidth(null)) / (double) width + 0.1;
+				double rate2 = ((double) src.getHeight(null)) / (double) height + 0.1;
+				double rate = rate1 > rate2 ? rate1 : rate2;
+				width = (int) (((double) src.getWidth(null)) / rate);
+				height = (int) (((double) src.getHeight(null)) / rate);
+			}
+			BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);				
+			image.getGraphics().drawImage(src.getScaledInstance(width, height, Image.SCALE_AREA_AVERAGING), 0, 0, null);
+			String newFile = getNewPath(imgPath);
+			FileOutputStream out = new FileOutputStream(base + newFile);
+			ImageIO.write(image ,"jpg",out);
+//			JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
+//			encoder.encode(image);
+			image.flush();
+			out.flush();
+			out.close();
+			src.flush();
+			return newFile;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return "";
+	}
+	
+	private static String getNewPath(String imgPath) {
+		String filePrex = imgPath.substring(0, imgPath.lastIndexOf('.'));
+		return filePrex + "0" + imgPath.substring(filePrex.length());
+	}
 }

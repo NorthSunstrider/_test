@@ -78,6 +78,13 @@
 			<artifactId>owner</artifactId>
 			<version>1.0.8</version>
 		</dependency>
+
+		<!-- 腾讯云旧版SDK -->
+		<dependency>
+			<groupId>com.qcloud</groupId>
+			<artifactId>qcloud-java-sdk</artifactId>
+			<version>2.0.6</version>
+		</dependency>
 	</dependencies>
 
 </project>
