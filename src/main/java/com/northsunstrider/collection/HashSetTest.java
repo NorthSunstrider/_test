@@ -1,9 +1,7 @@
-/**   
- * Copyright © 2018 eSunny Info. Tech Ltd. All rights reserved.
- * 
- * @Package: com.northsunstrider.collection 
- * @author: North   
- * @date: 2018年4月14日 下午3:01:26 
+/**
+ * @Package: com.northsunstrider.collection
+ * @author: North
+ * @date: 2018年4月14日 下午3:01:26
  */
 package com.northsunstrider.collection;
 
@@ -16,7 +14,7 @@ import java.util.Set;
  */
 public class HashSetTest {
 
-	public static void main(String[] args) {
-		Set set =new HashSet<>();
-	}
+    public static void main(String[] args) {
+        Set set = new HashSet<>();
+    }
 }

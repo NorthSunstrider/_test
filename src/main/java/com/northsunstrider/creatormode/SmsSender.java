@@ -1,6 +1,6 @@
 package com.northsunstrider.creatormode;
 
-public class SmsSender implements Send {
+public class SmsSender implements Sender {
 
 	@Override
 	public void send() {
