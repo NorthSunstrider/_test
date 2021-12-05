@@ -1,10 +1,14 @@
 package com.northsunstrider.accessmodifier;
 
+/**
+ * @author North
+ *
+ */
 public class PrivateClass {
 
-	A a =new A();
+	Atemp a =new Atemp();
 	
-	private class A{
+	private class Atemp{
 		
 		
 	}
