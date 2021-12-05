@@ -4,32 +4,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.northsunstrider.clz.Airplane;
-import com.northsunstrider.clz.Fly;
 import com.northsunstrider.clz1.Bat;
 
 public class HashMapTest {
 
-	public static void main(String[] args) {
-		testMapKeyType();
-		int a;
-		System.out.println(a=7);
-		
-		String c="abc";
-		String b="a"+new String("bc");
-		System.out.println(c==b);
-	}
+    public static void main(String[] args) {
+        testMapKeyType();
+    }
 
-	public static void testMapKeyType() {
-		Map map = new HashMap<>();
+    public static void testMapKeyType() {
+        Map map = new HashMap<>();
 
-		Bat bat = new Bat();
-		map.put(bat, "aaa");
+        Bat bat = new Bat();
+        map.put(bat, "aaa");
 
-		Airplane airplane = new Airplane();
-		map.put(airplane, "bbb");
+        Airplane airplane = new Airplane();
+        map.put(airplane, "bbb");
 
-		System.out.println(map.get(airplane));
+        System.out.println(map.get(airplane));
 
-	}
+    }
 
 }
