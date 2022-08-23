@@ -5,20 +5,20 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import javax.imageio.ImageIO;
 
 import com.northsunstrider.clz.Constructor;
 
+
+/**
+ * @author North
+ */
 public class Test {
 
     public static void main(String[] args) {
-        // int[] numbers = RandonArray(10, 100);
+        // int[] numbers = randomArray(10, 100);
         // for (int i : numbers)
         // System.out.print(i + "\t");
         // System.out.println();
@@ -35,7 +35,7 @@ public class Test {
         System.out.printf("%1$s %2$tB %2$td, %2$tY", "Due date:", date);
     }
 
-    public static int[] RandonArray(int size, int range) {
+    public static int[] randomArray(int size, int range) {
         int[] array = new int[size];
         Random random = new Random();
         for (int i = 0; i < size; i++)
@@ -262,5 +262,20 @@ public class Test {
         short s1 = 1, s2 = 1;
         short s3 = (short)(s1 + s2);
         i = b;
+    }
+
+    public static void listTest(){
+
+        List<String> list = Arrays.asList("AA", "BB");
+        //第一种
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+        //第二种
+        for (String s : list) {
+            System.out.println(s);
+        }
+        //第三种 lambda 表达式
+        list.forEach(System.out::println);
     }
 }
