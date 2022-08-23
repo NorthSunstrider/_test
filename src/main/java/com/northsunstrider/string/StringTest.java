@@ -1,5 +1,8 @@
 package com.northsunstrider.string;
 
+import java.nio.charset.Charset;
+import java.util.Arrays;
+
 /**
  * @Description: TODO
  * @author: North
@@ -20,6 +23,8 @@ public class StringTest {
         String c = "abc";
         String b = "a" + new String("bc");
         System.out.println(c == b);
+
+        chineseWords();
     }
 
     /**
@@ -55,6 +60,29 @@ public class StringTest {
         // 报错
         // char b="a";
         char c = '他';
+    }
+
+    // 中英文字符在内存中的存储方式
+    public static void chineseWords() {
+        try {
+            System.out.println(Charset.defaultCharset());
+            String code = "码";
+            String c = "0xF0";
+
+            System.out
+                .println("UTF-8占用内存大小为:" + code.getBytes("UTF-8").length + Arrays.toString(code.getBytes("UTF-8")));
+            System.out.println("GBK占用内存大小为:" + code.getBytes("gbk").length + Arrays.toString(code.getBytes("gbk")));
+            System.out
+                .println("GB2312占用内存大小为:" + code.getBytes("GB2312").length + Arrays.toString(code.getBytes("GB2312")));
+            System.out
+                .println("UTF-16占用内存大小为:" + code.getBytes("UTF-16").length + Arrays.toString(code.getBytes("UTF-16")));
+            System.out.println("=========================");
+            System.out.println("UTF-8占用内存大小为:" + c.getBytes("UTF-8").length + Arrays.toString(c.getBytes("UTF-8")));
+            System.out.println("GBK占用内存大小为:" + c.getBytes("gbk").length + Arrays.toString(c.getBytes("gbk")));
+            System.out.println("GB2312占用内存大小为:" + c.getBytes("GB2312").length + Arrays.toString(c.getBytes("GB2312")));
+            System.out.println("UTF-16占用内存大小为:" + c.getBytes("UTF-16").length + Arrays.toString(c.getBytes("UTF-16")));
+        } catch (Exception e) {
+        }
     }
 
 }
