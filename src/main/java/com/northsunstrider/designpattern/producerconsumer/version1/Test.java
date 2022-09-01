@@ -1,4 +1,4 @@
-package com.northsunstrider.version1;
+package com.northsunstrider.designpattern.producerconsumer.version1;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;

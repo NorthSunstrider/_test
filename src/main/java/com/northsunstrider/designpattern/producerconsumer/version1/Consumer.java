@@ -1,4 +1,4 @@
-package com.northsunstrider.version1;
+package com.northsunstrider.designpattern.producerconsumer.version1;
 
 /**
  * 消费者

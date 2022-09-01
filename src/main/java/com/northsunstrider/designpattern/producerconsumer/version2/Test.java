@@ -1,4 +1,4 @@
-package com.northsunstrider.version2;
+package com.northsunstrider.designpattern.producerconsumer.version2;
 
 import java.util.ArrayList;
 import java.util.List;
