@@ -1,4 +1,4 @@
-package com.northsunstrider.lambda;
+package com.northsunstrider.java8.lambda;
 
 import java.util.function.Supplier;
 import java.util.logging.Logger;
