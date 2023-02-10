@@ -1,9 +1,5 @@
 package com.northsunstrider.rocketmq;
 
-/**
- * @author North
- * @date 2021/11/18
- */
 import java.util.List;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
@@ -13,6 +9,10 @@ import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.message.MessageExt;
 
+/**
+ * @author North
+ * @date 2021/11/18
+ */
 public class Consumer {
 
     public static void main(String[] args) throws InterruptedException, MQClientException {

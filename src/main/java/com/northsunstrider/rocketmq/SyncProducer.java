@@ -1,14 +1,14 @@
 package com.northsunstrider.rocketmq;
 
-/**
- * @author North
- * @date 2021/11/18
- */
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
 
+/**
+ * @author North
+ * @date 2021/11/18
+ */
 public class SyncProducer {
     public static void main(String[] args) throws Exception {
         // 实例化消息生产者Producer

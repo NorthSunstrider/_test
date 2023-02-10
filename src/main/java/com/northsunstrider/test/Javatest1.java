@@ -5,7 +5,7 @@ package com.northsunstrider.test;
  * @author: North
  * @date: 2018年4月16日 下午4:26:36  
  */
-public class javatest1 {
+public class Javatest1 {
 	public static void main(String[] args) {
 		Node head = new Node(0);
 		Node node1 = new Node(1);

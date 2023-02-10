@@ -17,45 +17,46 @@ import org.junit.Test;
  */
 public class SerializationTest {
 
-	/**
-	 * @Description 将对象保存在文本中，如果父类未实现序列化，则将子类对象保存时不会储存父类中的属性
-	 *              既如下例所示，当父类未实现序列化时，先保存再取出子类对象，发现a值为默认值，
-	 */
-	@Test
-	public void testSave() {
-		try {
-			File file = new File("D:\\Matrix\\workspace\\1.txt");
+    private String filePath = "C:\\Matrix\\temp\\1.txt";
 
-			FileOutputStream fos = new FileOutputStream(file);
+    /**
+     * @Description 将对象保存在文本中，如果父类未实现序列化，则将子类对象保存时不会储存父类中的属性 既如下例所示，当父类未实现序列化时，先保存再取出子类对象，发现a值为默认值，
+     */
+    @Test
+    public void testSave() {
+        try {
+            File file = new File(filePath);
 
-			Child child = new Child();
-			child.a = 0;
-			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
-			objectOutputStream.writeObject(child);
-			objectOutputStream.close();
-			fos.close();
+            FileOutputStream fos = new FileOutputStream(file);
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+            Child child = new Child();
+            child.a = 0;
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fos);
+            objectOutputStream.writeObject(child);
+            objectOutputStream.close();
+            fos.close();
 
-	@Test
-	public void testRead() {
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-		try {
-			File file = new File("D:\\Matrix\\workspace\\1.txt");
-			FileInputStream fis = new FileInputStream(file);
-			ObjectInputStream objectInputStream = new ObjectInputStream(fis);
-			Child child = (Child) objectInputStream.readObject();
-			System.out.println(child.a);
-			objectInputStream.close();
-			fis.close();
+    @Test
+    public void testRead() {
 
-		} catch (Exception e) {
-		}
-	}
+        try {
+            File file = new File(filePath);
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fis);
+            Child child = (Child)objectInputStream.readObject();
+            System.out.println(child.a);
+            objectInputStream.close();
+            fis.close();
+
+        } catch (Exception e) {
+        }
+    }
 
 }

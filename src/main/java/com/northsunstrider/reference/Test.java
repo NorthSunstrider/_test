@@ -7,7 +7,9 @@ import java.lang.ref.WeakReference;
 import com.northsunstrider.dota2.Unit;
 
 /**
- * @Description: java 四种引用规则的测试
+ * 一般应用不到，除非做缓存什么的，某些底层框架可能也会用到<br/> 
+ * java 四种引用规则的测试
+ * 
  * @author: North
  * @date: 2018年4月19日 上午9:32:24
  */

@@ -20,10 +20,10 @@ public class TimerTest {
         //
         // System.out.println("===========");
         //
-        timer2();
+        // timer2();
         // System.out.println("===========");
         //
-        // timer3();
+        timer3();
         // timer4();
     }
 

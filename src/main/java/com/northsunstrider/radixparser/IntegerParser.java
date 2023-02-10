@@ -1,36 +1,36 @@
 package com.northsunstrider.radixparser;
 
-/** 
+/**
  * @Description 进制转换工具
- * @author North 
- * @date 2016年2月1日 上午11:35:53 
+ * @author North
+ * @date 2016年2月1日 上午11:35:53
  * @version V1.0
  */
 public class IntegerParser {
 
-	private static int REDIX = 13;
+    private static int REDIX = 2;
 
-	public static int parse(String s) {
-		int number = 0;
-		for (int i = 0; i < s.length(); i++) {
-			char a = s.charAt(i);
-			int aInt = (int) a;
-			if ((int) a >= 65 && (int) a <= 90) {
-				double x = Math.pow(REDIX, s.length() - i - 1);
-				number += (x * (aInt - 54));
-			}
-			if ((int) a >= 48 && (int) a <= 57) {
-				double x = Math.pow(REDIX, s.length() - i - 1);
-				number += (x * (aInt - 48));
-			}
-		}
+    public static int parse(String s) {
+        int number = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char a = s.charAt(i);
+            int aInt = (int)a;
+            if ((int)a >= 65 && (int)a <= 90) {
+                double x = Math.pow(REDIX, s.length() - i - 1);
+                number += (x * (aInt - 54));
+            }
+            if ((int)a >= 48 && (int)a <= 57) {
+                double x = Math.pow(REDIX, s.length() - i - 1);
+                number += (x * (aInt - 48));
+            }
+        }
 
-		return number;
-	}
+        return number;
+    }
 
-	public static void main(String[] args) {
-		String value = "11";
-		int a = parse(value);
-		System.out.println(a);
-	}
+    public static void main(String[] args) {
+        String value = "110011";
+        int a = parse(value);
+        System.out.println(a);
+    }
 }

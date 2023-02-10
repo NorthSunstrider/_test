@@ -27,6 +27,8 @@ public class AAA {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
+                        // 在wait()方法后面的语句，会在下一次被唤醒时执行，并且会继续执行进入while()循环体
+                        // System.out.println("after wait" + Thread.currentThread().getName());
                     }
                 }
             }
