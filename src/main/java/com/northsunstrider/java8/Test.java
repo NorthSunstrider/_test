@@ -109,4 +109,14 @@ public class Test {
         }
 
     }
+
+    @org.junit.Test
+    public void testOptional() {
+        Person person = new Person();
+        System.out.println(person.getTruck().get().getInsurance().get().getName());
+        Optional<Person> optionalPerson = Optional.of(person);
+        String str = optionalPerson.flatMap(Person::getTruck).flatMap(Truck::getInsurance).map(Insurance::getName)
+            .orElse("unKnown");
+        System.out.println(str);
+    }
 }
