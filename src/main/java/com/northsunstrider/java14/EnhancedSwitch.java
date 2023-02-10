@@ -19,4 +19,13 @@ public class EnhancedSwitch {
         }
     }
 
+    public void test2() {
+        int index = 0;
+        switch (index) {
+            case 0 -> System.out.println("zero");
+            // Mixing of different kinds of case statements '->' and ':' is not allowed within a switch
+            // case 1:System.out.println("one");
+        }
+
+    }
 }
