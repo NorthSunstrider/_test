@@ -21,8 +21,8 @@ public class AAA {
             public void run() {
                 synchronized (object) {
                     while (true) {
-                        System.out.println("wait" + Thread.currentThread().getName());
                         try {
+                            System.out.println("wait" + Thread.currentThread().getName());
                             object.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -38,10 +38,10 @@ public class AAA {
             @Override
             public void run() {
                 while (true) {
-                    System.out.println("notify" + Thread.currentThread().getName());
                     try {
                         sleep(3000);
                         synchronized (object) {
+                            System.out.println("notify" + Thread.currentThread().getName());
                             object.notifyAll();
                         }
                     } catch (Exception e) {
