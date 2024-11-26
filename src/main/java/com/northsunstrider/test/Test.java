@@ -6,6 +6,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import javax.imageio.ImageIO;
 
@@ -31,9 +34,10 @@ public class Test {
         // hash1();
         // reduce("C:\\Matrix\\", "Snipaste_2021-01-08_23-02-03.png", 100, 100, false);
         // 初始化 Date 对象
-        Date date = new Date();
-        // 使用toString()显示日期和时间
-        System.out.printf("%1$s %2$tB %2$td, %2$tY", "Due date:", date);
+//        Date date = new Date();
+//        // 使用toString()显示日期和时间
+//        System.out.printf("%1$s %2$tB %2$td, %2$tY", "Due date:", date);
+        loopPrintNumberInThread();
     }
 
     public static int[] randomArray(int size, int range) {
@@ -62,7 +66,7 @@ public class Test {
     }
 
     public static void bubbleSort(int[] numbers) {
-        numbers = new int[] {6, 3, 23, 6, 7, 67};
+        numbers = new int[]{6, 3, 23, 6, 7, 67};
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 0; j < numbers.length - 1; j++) {
                 if (numbers[j] > numbers[j + 1]) {
@@ -221,11 +225,11 @@ public class Test {
             File srcfile = new File(base + imgPath);
             BufferedImage src = ImageIO.read(srcfile);
             if (percentage) {
-                double rate1 = ((double)src.getWidth(null)) / (double)width + 0.1;
-                double rate2 = ((double)src.getHeight(null)) / (double)height + 0.1;
+                double rate1 = ((double) src.getWidth(null)) / (double) width + 0.1;
+                double rate2 = ((double) src.getHeight(null)) / (double) height + 0.1;
                 double rate = rate1 > rate2 ? rate1 : rate2;
-                width = (int)(((double)src.getWidth(null)) / rate);
-                height = (int)(((double)src.getHeight(null)) / rate);
+                width = (int) (((double) src.getWidth(null)) / rate);
+                height = (int) (((double) src.getHeight(null)) / rate);
             }
             BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             image.getGraphics().drawImage(src.getScaledInstance(width, height, Image.SCALE_AREA_AVERAGING), 0, 0, null);
@@ -261,11 +265,11 @@ public class Test {
         // s1 += 1;
         int i = 23;
         short s1 = 1, s2 = 1;
-        short s3 = (short)(s1 + s2);
+        short s3 = (short) (s1 + s2);
         i = b;
     }
 
-    public static void listTest(){
+    public static void listTest() {
 
         List<String> list = Arrays.asList("AA", "BB");
         //第一种
@@ -278,5 +282,38 @@ public class Test {
         }
         //第三种 lambda 表达式
         list.forEach(System.out::println);
+    }
+
+    public static void collectionsTest() {
+        List list = Arrays.asList("AA", "BB");
+        Collection al = Collections.synchronizedCollection(list);
+
+    }
+
+    public static void loopPrintNumberInThread() {
+        AtomicInteger ai = new AtomicInteger(0);
+        Lock lock = new ReentrantLock();
+
+        new Thread(() -> {
+            while (ai.get() < 200) {
+                lock.lock();
+
+                System.out.println(Thread.currentThread().getName() + "——" + ai.getAndIncrement());
+                lock.unlock();
+
+            }
+        }).start();
+
+        new Thread(() -> {
+
+            while (ai.get() < 200) {
+                lock.lock();
+
+                System.out.println(Thread.currentThread().getName() + "——" + ai.getAndIncrement());
+                lock.unlock();
+
+            }
+
+        }).start();
     }
 }
