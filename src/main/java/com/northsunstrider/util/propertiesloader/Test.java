@@ -1,4 +1,4 @@
-package com.northsunstrider.util.propertiesloader.origin;
+package com.northsunstrider.util.propertiesloader;
 
 /**
  * @Description: TODO
