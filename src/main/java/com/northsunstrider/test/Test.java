@@ -9,6 +9,7 @@ import java.util.*;
 
 import javax.imageio.ImageIO;
 
+import com.northsunstrider.accessmodifier.MethodClass;
 import com.northsunstrider.clz.Constructor;
 
 
