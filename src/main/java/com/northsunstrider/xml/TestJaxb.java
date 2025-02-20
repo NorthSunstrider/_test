@@ -10,7 +10,7 @@ import javax.xml.bind.Unmarshaller;
 import org.junit.Test;
 
 /*
- * jdk不在内置javax，需要在maven中额外引入 这样就麻烦了，不如直接使用dom4j这个类库
+ * jdk不再内置javax，需要在maven中额外引入 这样就麻烦了，不如直接使用dom4j这个类库
  * 
  * 莫名其妙，以前项目JDK8以上使用jaxbContext转换xml的时候提示找不到class。百度也确实发现java在逐步移除一些功能，解决方法就是手动引入，比如 <dependency>
  * <groupId>javax.xml.bind</groupId> <artifactId>jaxb-api</artifactId> <version>2.3.1</version> </dependency>
