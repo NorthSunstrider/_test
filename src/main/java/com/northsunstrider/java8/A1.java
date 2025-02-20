@@ -9,13 +9,14 @@ import java.util.function.Supplier;
 public abstract class A1 {
 
     protected void idempotentMessageBody(String msgKey, Supplier<Boolean> supplier) {
-        // 对消息体进行md5加密做为key, 放入redis, 有效时间暂定60s, 重复消息抛弃并告警
-        System.out.println("获得锁" + msgKey);
+        // 方法开始
+        System.out.println("A1方法开始" + msgKey);
 
         // 开始执行A2的printString()方法, 就可以在前后进行一些修饰
         supplier.get();
 
-        System.out.println("释放锁");
+        //执行完传入的函数，继续执行
+        System.out.println("A1执行完毕");
     }
 
 }

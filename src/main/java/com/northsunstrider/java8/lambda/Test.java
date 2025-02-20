@@ -17,7 +17,7 @@ public class Test {
      */
     public static void main(String[] args) {
 
-        Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 10).stream().reduce(0, Integer::sum);
+        System.out.println(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 10).stream().reduce(0, Integer::sum));
 
         Arrays.asList("a", "b", "d").forEach(System.out::println);
 

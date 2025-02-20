@@ -31,7 +31,7 @@ public class UseSingleConditionWaitNotify {
         public void await() {
             lock.lock();
             try {
-                System.out.println(" await时间为" + System.currentTimeMillis());
+                System.out.println("await时间为" + System.currentTimeMillis());
                 condition.await();
                 System.out.println("这是condition.await()方法之后的语句，condition.signal()方法之后我才被执行");
             } catch (InterruptedException e) {
